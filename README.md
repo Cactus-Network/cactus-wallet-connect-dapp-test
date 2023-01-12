@@ -1,3 +1,8 @@
+# Warning
+This sample project is intended for demonstration purposes only and should not be used for production code.
+
+The dependencies used in this sample project may be outdated and may contain known security vulnerabilities. It is highly recommended that you only use the code as a reference when developing your own project.
+
 # React dApp (with standalone v2 client)
 
 🔗 Live dapp demo - https://react-app.walletconnect.com/ <br />
