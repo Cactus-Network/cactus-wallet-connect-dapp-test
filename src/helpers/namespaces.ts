@@ -10,8 +10,8 @@ import {
   DEFAULT_POLKADOT_METHODS,
   DEFAULT_NEAR_METHODS,
   DEFAULT_NEAR_EVENTS,
-  DEFAULT_CHIA_METHODS,
-  DEFAULT_CHIA_EVENTS,
+  DEFAULT_CACTUS_METHODS,
+  DEFAULT_CACTUS_EVENTS,
   DEFAULT_ELROND_EVENTS,
   DEFAULT_ELROND_METHODS,
 } from "../constants";
@@ -38,8 +38,8 @@ export const getSupportedMethodsByNamespace = (namespace: string) => {
       return Object.values(DEFAULT_SOLANA_METHODS);
     case "polkadot":
       return Object.values(DEFAULT_POLKADOT_METHODS);
-    case "chia":
-      return Object.values(DEFAULT_CHIA_METHODS);
+    case "cactus":
+      return Object.values(DEFAULT_CACTUS_METHODS);
     case "near":
       return Object.values(DEFAULT_NEAR_METHODS);
     case "elrond":
@@ -61,8 +61,8 @@ export const getSupportedEventsByNamespace = (namespace: string) => {
       return Object.values(DEFAULT_POLKADOT_EVENTS);
     case "near":
       return Object.values(DEFAULT_NEAR_EVENTS);
-    case "chia":
-      return Object.values(DEFAULT_CHIA_EVENTS);
+    case "cactus":
+      return Object.values(DEFAULT_CACTUS_EVENTS);
     case "elrond":
       return Object.values(DEFAULT_ELROND_EVENTS);
     default:

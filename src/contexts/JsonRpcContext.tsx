@@ -32,7 +32,7 @@ import {
   DEFAULT_POLKADOT_METHODS,
   DEFAULT_NEAR_METHODS,
   DEFAULT_ELROND_METHODS,
-  DEFAULT_CHIA_METHODS,
+  DEFAULT_CACTUS_METHODS,
 } from "../constants";
 import { useChainData } from "./ChainDataContext";
 import { signatureVerify, cryptoWaitReady } from "@polkadot/util-crypto";
@@ -91,7 +91,7 @@ interface IContext {
     testSignTransaction: TRpcRequestCallback;
     testSignTransactions: TRpcRequestCallback;
   };
-  chiaRpc: {
+  cactusRpc: {
     testSendTransaction: TRpcRequestCallback,
     testNewAddress: TRpcRequestCallback,
     testLogIn: TRpcRequestCallback,
@@ -739,13 +739,13 @@ export function JsonRpcContextProvider({
     ),
   };
 
-  const chiaRpc = {
+  const cactusRpc = {
     testSendTransaction: _createJsonRpcRequestHandler(
       async (
         chainId: string,
         address: string
       ): Promise<IFormattedRpcResponse> => {
-        const method = DEFAULT_CHIA_METHODS.CHIA_SEND_TRANSACTION;
+        const method = DEFAULT_CACTUS_METHODS.CACTUS_SEND_TRANSACTION;
         const result = await client!.request({
           topic: session!.topic,
           chainId,
@@ -773,7 +773,7 @@ export function JsonRpcContextProvider({
         chainId: string,
         address: string
       ): Promise<IFormattedRpcResponse> => {
-        const method = DEFAULT_CHIA_METHODS.CHIA_NEW_ADDRESS;
+        const method = DEFAULT_CACTUS_METHODS.CACTUS_NEW_ADDRESS;
         const result = await client!.request({
           topic: session!.topic,
           chainId,
@@ -798,7 +798,7 @@ export function JsonRpcContextProvider({
         chainId: string,
         address: string
       ): Promise<IFormattedRpcResponse> => {
-        const method = DEFAULT_CHIA_METHODS.CHIA_LOG_IN;
+        const method = DEFAULT_CACTUS_METHODS.CACTUS_LOG_IN;
         const result = await client!.request({
           topic: session!.topic,
           chainId,
@@ -823,7 +823,7 @@ export function JsonRpcContextProvider({
         chainId: string,
         address: string
       ): Promise<IFormattedRpcResponse> => {
-        const method = DEFAULT_CHIA_METHODS.CHIA_SIGN_MESSAGE_BY_ADDRESS;
+        const method = DEFAULT_CACTUS_METHODS.CACTUS_SIGN_MESSAGE_BY_ADDRESS;
         const result = await client!.request({
           topic: session!.topic,
           chainId,
@@ -850,7 +850,7 @@ export function JsonRpcContextProvider({
         chainId: string,
         address: string
       ): Promise<IFormattedRpcResponse> => {
-        const method = DEFAULT_CHIA_METHODS.CHIA_SIGN_MESSAGE_BY_ID;
+        const method = DEFAULT_CACTUS_METHODS.CACTUS_SIGN_MESSAGE_BY_ID;
         const result = await client!.request({
           topic: session!.topic,
           chainId,
@@ -877,7 +877,7 @@ export function JsonRpcContextProvider({
         chainId: string,
         address: string
       ): Promise<IFormattedRpcResponse> => {
-        const method = DEFAULT_CHIA_METHODS.CHIA_GET_WALLET_SYNC_STATUS
+        const method = DEFAULT_CACTUS_METHODS.CACTUS_GET_WALLET_SYNC_STATUS
         const result = await client!.request({
           topic: session!.topic,
           chainId,
@@ -1206,7 +1206,7 @@ export function JsonRpcContextProvider({
         polkadotRpc,
         nearRpc,
         elrondRpc,
-        chiaRpc,
+        cactusRpc,
         rpcResult: result,
         isRpcRequestPending: pending,
         isTestnet,

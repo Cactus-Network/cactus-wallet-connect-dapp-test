@@ -7,38 +7,38 @@ import {
   ChainRequestRender,
 } from "../helpers";
 
-export const ChiaMetadata: NamespaceMetadata = {
+export const CactusMetadata: NamespaceMetadata = {
   testnet: {
-    logo: "https://www.chia.net/wp-content/uploads/2022/09/chia-logo.svg",
+    logo: "https://www.cactus-network.net/wp-content/uploads/cactus_logo.svg",
     rgb: "92, 170, 98",
   },
   mainnet: {
-    logo: "https://www.chia.net/wp-content/uploads/2022/09/chia-logo.svg",
+    logo: "https://www.cactus-network.net/wp-content/uploads/cactus_logo.svg",
     rgb: "92, 170, 98",
   },
 };
 
-// TODO: add `chia` namespace to `caip-api` package to avoid manual specification here.
-export const ChiaChainData: ChainsMap = {
+// TODO: add `cactus` namespace to `caip-api` package to avoid manual specification here.
+export const CactusChainData: ChainsMap = {
   testnet: {
-    name: "Chia Testnet",
-    id: "chia:testnet",
-    rpc: ["https://chia.net"],
-    slip44: 8444,
+    name: "Cactus Testnet",
+    id: "cactus:testnet",
+    rpc: ["https://cactus-network.net"],
+    slip44: 11444,
     testnet: true,
   },
   mainnet: {
-    name: "Chia Mainnet",
-    id: "chia:mainnet",
-    rpc: ["https://chia.net"],
-    slip44: 8444,
+    name: "Cactus Mainnet",
+    id: "cactus:mainnet",
+    rpc: ["https://cactus-network.net"],
+    slip44: 11444,
     testnet: false,
   }
 };
 
 export function getChainMetadata(chainId: string): ChainMetadata {
   const reference = chainId.split(":")[1];
-  const metadata = ChiaMetadata[reference];
+  const metadata = CactusMetadata[reference];
   if (typeof metadata === "undefined") {
     throw new Error(`No chain metadata found for chainId: ${chainId}`);
   }

@@ -5,7 +5,7 @@ import * as cosmos from "./cosmos";
 import * as polkadot from "./polkadot";
 import * as solana from "./solana";
 import * as near from "./near";
-import * as chia from "./chia";
+import * as cactus from "./cactus";
 import * as elrond from "./elrond";
 
 import { ChainMetadata, ChainRequestRender } from "../helpers";
@@ -23,8 +23,8 @@ export function getChainMetadata(chainId: string): ChainMetadata {
       return solana.getChainMetadata(chainId);
     case "near":
       return near.getChainMetadata(chainId);
-    case "chia":
-      return chia.getChainMetadata(chainId);
+    case "cactus":
+      return cactus.getChainMetadata(chainId);
     case "elrond":
       return elrond.getChainMetadata(chainId);
     default:
@@ -44,8 +44,8 @@ export function getChainRequestRender(
       return cosmos.getChainRequestRender(request);
     case "polkadot":
       return polkadot.getChainRequestRender(request);
-    case "chia":
-      return chia.getChainRequestRender(request);
+    case "cactus":
+      return cactus.getChainRequestRender(request);
     case "near":
       return near.getChainRequestRender(request);
     default:

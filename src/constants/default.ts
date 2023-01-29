@@ -9,7 +9,7 @@ export const DEFAULT_MAIN_CHAINS = [
   "cosmos:cosmoshub-4",
   "solana:4sGjMW1sUnHzSxGspuhpqLDx6wiyjNtZ",
   "polkadot:91b171bb158e2d3848fa23a9f1c25182",
-  "chia:mainnet",
+  "cactus:mainnet",
   "elrond:1",
 ];
 
@@ -23,7 +23,7 @@ export const DEFAULT_TEST_CHAINS = [
   "solana:8E9rvCKLFQia2Y35HXjjpWzj8weVo44K",
   "polkadot:e143f23803ac50e8f6f8e62695d1ce9e",
   "near:testnet",
-  "chia:testnet",
+  "cactus:testnet",
   "elrond:D",
 ];
 
@@ -35,8 +35,8 @@ export const DEFAULT_RELAY_URL = process.env.NEXT_PUBLIC_RELAY_URL;
 export const DEFAULT_LOGGER = "debug";
 
 export const DEFAULT_APP_METADATA = {
-  name: "Test Wallet Connect Dapp",
-  description: "React App for WalletConnect",
+  name: "Cactus Wallet Connect Dapp",
+  description: "Cactus React App for WalletConnect",
   url: "https://walletconnect.com/",
   icons: ["https://avatars.githubusercontent.com/u/37784886"],
 };
@@ -75,16 +75,16 @@ export enum DEFAULT_SOLANA_METHODS {
   SOL_SIGN_MESSAGE = "solana_signMessage",
 }
 
-export enum DEFAULT_CHIA_METHODS {
-  CHIA_SEND_TRANSACTION = "chia_sendTransaction",
-  CHIA_NEW_ADDRESS = "chia_getNextAddress",
-  CHIA_LOG_IN = 'chia_logIn',
-  CHIA_SIGN_MESSAGE_BY_ADDRESS = 'chia_signMessageByAddress',
-  CHIA_SIGN_MESSAGE_BY_ID = 'chia_signMessageById',
-  CHIA_GET_WALLET_SYNC_STATUS = 'chia_getSyncStatus',
+export enum DEFAULT_CACTUS_METHODS {
+  CACTUS_SEND_TRANSACTION = "cactus_sendTransaction",
+  CACTUS_NEW_ADDRESS = "cactus_getNextAddress",
+  CACTUS_LOG_IN = 'cactus_logIn',
+  CACTUS_SIGN_MESSAGE_BY_ADDRESS = 'cactus_signMessageByAddress',
+  CACTUS_SIGN_MESSAGE_BY_ID = 'cactus_signMessageById',
+  CACTUS_GET_WALLET_SYNC_STATUS = 'cactus_getSyncStatus',
 }
 
-export enum DEFAULT_CHIA_EVENTS {}
+export enum DEFAULT_CACTUS_EVENTS {}
 
 
 export enum DEFAULT_SOLANA_EVENTS {}

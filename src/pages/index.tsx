@@ -16,7 +16,7 @@ import {
   DEFAULT_ELROND_METHODS,
   DEFAULT_TEST_CHAINS,
   DEFAULT_NEAR_METHODS,
-  DEFAULT_CHIA_METHODS,
+  DEFAULT_CACTUS_METHODS,
 } from "../constants";
 import { AccountAction, setLocaleStorageTestnetFlag } from "../helpers";
 import Toggle from "../components/Toggle";
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
     polkadotRpc,
     nearRpc,
     elrondRpc,
-    chiaRpc,
+    cactusRpc,
     isRpcRequestPending,
     rpcResult,
     isTestnet,
@@ -244,62 +244,62 @@ const Home: NextPage = () => {
     ];
   };
 
-  const getChiaActions = (): AccountAction[] => {
+  const getCactusActions = (): AccountAction[] => {
     const onSendTransaction = async (chainId: string, address: string) => {
       openRequestModal();
-      await chiaRpc.testSendTransaction(chainId, address);
+      await cactusRpc.testSendTransaction(chainId, address);
     };
 
     const onNewAddress = async (chainId: string, address: string) => {
       openRequestModal();
-      await chiaRpc.testNewAddress(chainId, address);
+      await cactusRpc.testNewAddress(chainId, address);
     };
 
     const onLogIn = async (chainId: string, address: string) => {
       openRequestModal();
-      await chiaRpc.testLogIn(chainId, address);
+      await cactusRpc.testLogIn(chainId, address);
     };
 
     const onSignMessageByAddress = async (chainId: string, address: string) => {
       openRequestModal();
-      await chiaRpc.testSignMessageByAddress(chainId, address);
+      await cactusRpc.testSignMessageByAddress(chainId, address);
     };
 
     const onSignMessageById = async (chainId: string, address: string) => {
       openRequestModal();
-      await chiaRpc.testSignMessageById(chainId, address);
+      await cactusRpc.testSignMessageById(chainId, address);
     };
 
     const onGetWalletSyncStatus = async (chainId: string, address: string) => {
       openRequestModal();
-      await chiaRpc.testGetWalletSyncStatus(chainId, address);
+      await cactusRpc.testGetWalletSyncStatus(chainId, address);
     };
 
     
 
     return [
       {
-        method: DEFAULT_CHIA_METHODS.CHIA_SEND_TRANSACTION,
+        method: DEFAULT_CACTUS_METHODS.CACTUS_SEND_TRANSACTION,
         callback: onSendTransaction,
       },
       {
-        method: DEFAULT_CHIA_METHODS.CHIA_NEW_ADDRESS,
+        method: DEFAULT_CACTUS_METHODS.CACTUS_NEW_ADDRESS,
         callback: onNewAddress,
       },
       {
-        method: DEFAULT_CHIA_METHODS.CHIA_LOG_IN,
+        method: DEFAULT_CACTUS_METHODS.CACTUS_LOG_IN,
         callback: onLogIn,
       },
       {
-        method: DEFAULT_CHIA_METHODS.CHIA_SIGN_MESSAGE_BY_ADDRESS,
+        method: DEFAULT_CACTUS_METHODS.CACTUS_SIGN_MESSAGE_BY_ADDRESS,
         callback: onSignMessageByAddress,
       },
       {
-        method: DEFAULT_CHIA_METHODS.CHIA_SIGN_MESSAGE_BY_ID,
+        method: DEFAULT_CACTUS_METHODS.CACTUS_SIGN_MESSAGE_BY_ID,
         callback: onSignMessageById,
       },
       {
-        method: DEFAULT_CHIA_METHODS.CHIA_GET_WALLET_SYNC_STATUS,
+        method: DEFAULT_CACTUS_METHODS.CACTUS_GET_WALLET_SYNC_STATUS,
         callback: onGetWalletSyncStatus,
       },
     ];
@@ -348,8 +348,8 @@ const Home: NextPage = () => {
         return getPolkadotActions();
       case "near":
         return getNearActions();
-      case "chia":
-        return getChiaActions();
+      case "Cactus":
+        return getCactusActions();
       case "elrond":
         return getElrondActions();
       default:
