@@ -75,6 +75,9 @@ export enum DEFAULT_SOLANA_METHODS {
   SOL_SIGN_MESSAGE = "solana_signMessage",
 }
 
+/**
+ * CACTUS
+ */
 export enum DEFAULT_CACTUS_METHODS {
   CACTUS_SEND_TRANSACTION = "cactus_sendTransaction",
   CACTUS_NEW_ADDRESS = "cactus_getNextAddress",

@@ -25,14 +25,14 @@ export const CactusChainData: ChainsMap = {
     id: "cactus:testnet",
     rpc: ["https://cactus-network.net"],
     slip44: 11444,
-    testnet: true,
+    testnet: false,
   },
   mainnet: {
     name: "Cactus Mainnet",
     id: "cactus:mainnet",
     rpc: ["https://cactus-network.net"],
     slip44: 11444,
-    testnet: false,
+    testnet: true,
   }
 };
 
